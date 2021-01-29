@@ -11,9 +11,9 @@ import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button'; 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule } from  '@angular/material/datepicker'; 
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
-import {MatGridListModule} from '@angular/material/grid-list'; 
+import { MatGridListModule } from '@angular/material/grid-list'; 
 
 @NgModule({
   declarations: [
@@ -32,6 +32,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatInputModule,
     MatDatepickerModule,
     MatMomentDateModule,
+    MatGridListModule,
     MatGridListModule
   ],
   providers: [],

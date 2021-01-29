@@ -38,3 +38,15 @@ CSS
 mat-grid-tile {
   background: lightblue;
 }
+
+.mat-toolbar {
+  background: rgba(0, 191, 165, 0.46);;
+  color: #fff;
+  font-family: Futura;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 4vw;
+  line-height: 16px;
+  color: #000000;
+  text-align: center;
+}
