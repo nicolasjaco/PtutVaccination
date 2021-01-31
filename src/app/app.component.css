@@ -1,52 +1,87 @@
-section {
-    display: table;
-  }
-  
-  .example-label {
-    display: table-cell;
-    font-size: 14px;
-    margin-left: 8px;
-    min-width: 120px;
-  }
-  
-  .example-button-row {
-    display: table-cell;
-    width: 490px;
-  }
-  
-  .example-button-row .mat-button-base {
-    margin: 8px 8px 8px 0;
-  }
-  
-  .example-flex-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
-  .example-button-container {
-    display: flex;
-    justify-content: center;
-    width: 120px;
-  }
-  .example-spacer {
-    flex: 1 1 auto;
-  }  
-  TS
-CSS
-
-mat-grid-tile {
-  background: lightblue;
+#tool_bar{
+  background-color: #00BFA5;   
+  opacity: 0.8;  
 }
 
-.mat-toolbar {
-  background: rgba(0, 191, 165, 0.46);;
-  color: #fff;
-  font-family: Futura;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 4vw;
-  line-height: 16px;
-  color: #000000;
-  text-align: center;
+#toggleButton{
+  margin: 0px 0px 0px 0px;  
 }
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+#toggleleft{
+    background-color: #0097A7;
+    opacity: 0.5;     
+}
+
+#toggleright{
+  background-color: #0097A7;
+  opacity: 0.5;
+}
+
+#sp2{
+    font-family: Roboto Light;
+    margin: 0px 0px 0px 580px;
+    color: black;
+}
+
+#sp3{
+  font-family: Roboto Light;
+  margin: 0px 10px 0px 0px;
+  color: black;
+}
+
+#tog1{
+  width: 33%;
+  background-color: #00BFA5;      
+    font-size: 1.5em;
+    color:white;
+    font-style: Roboto Light; 
+}
+
+#tog2{
+  width: 33%;
+  background-color: #00BFA5;        
+    font-size: 1.5em;
+    color:white;
+    font-style: Roboto Light; 
+}
+
+#tog3{
+  width: 33%;
+  background-color:#00BFA5;           
+    font-size: 1.5em;
+    color:white;
+    font-style: Roboto Light; 
+}
+
+h2{
+    margin-top: 75px;
+}
+
+.accordion{
+  width: 30%;
+}
+
+.panel_title{
+  color:black;
+  font-size: 1.5em;
+  font-style: FUTURA; 
+} 
+
+.maticon_bell{
+  margin: 0px 0px 0px 300px;
+}
+
+#btplus{
+  background-color: #00BFA5;
+  color:#FFC400;
+  font-size: 2em;
+  margin: 450px 0px 0px 1450px;
+  position: fixed;
+}
+
+
+

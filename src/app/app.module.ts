@@ -1,19 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
-import {MatDividerModule} from '@angular/material/divider';
+import{MatButtonModule} from '@angular/material/button';
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
+//import{MatGridListModule} from "@angular/material/grid-list";
+import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
-import { FormsModule } from '@angular/forms'; 
-import {MatButtonModule} from '@angular/material/button'; 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatMomentDateModule } from '@angular/material-moment-adapter';
-import { MatGridListModule } from '@angular/material/grid-list'; 
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 @NgModule({
   declarations: [
@@ -23,17 +20,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSliderModule,
-    MatDividerModule,
-    MatIconModule,
     MatButtonModule,
-    FormsModule,
+    MatButtonToggleModule,
+    //MatGridListModule
     MatToolbarModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatMomentDateModule,
-    MatGridListModule,
-    MatGridListModule
+    MatIconModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
