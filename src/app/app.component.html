@@ -13,25 +13,26 @@
     </span>
   </mat-toolbar>
 </div>
-<div id="toggle_button">
-  <mat-button-toggle id="tog1" value="Calendrier">Calendrier</mat-button-toggle>
-  <mat-button-toggle id="tog2" value="Chronologie">Chronologie</mat-button-toggle>
-  <mat-button-toggle id="tog3" value="Documents">Documents</mat-button-toggle>
-</div>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Calendrier">
+    <h2>Rappels à venir</h2>
+    <mat-accordion>
+      <mat-expansion-panel class="accordion" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="panel_title">
+            <p>DTP</p>
+            <p class="maticon_bell"><button mat-icon-button>
+                <mat-icon>add_alert</mat-icon>
+              </button></p>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Fait le 23/05/15</p>
+      </mat-expansion-panel>
+    </mat-accordion>
 
-<h2>Rappels à venir</h2>
+    <button id="btplus" mat-mini-fab>+</button>
+  </mat-tab>
 
-<mat-accordion> 
-  <mat-expansion-panel class="accordion" (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-    <mat-expansion-panel-header>
-      <mat-panel-title class="panel_title">
-        <p>DTP</p>
-        <p class="maticon_bell"><button mat-icon-button><mat-icon>add_alert</mat-icon></button></p>        
-      </mat-panel-title>      
-    </mat-expansion-panel-header>
-    <p>Fait le 23/05/15</p>
-  </mat-expansion-panel>
-</mat-accordion>            
-
-<button id="btplus" mat-mini-fab>+</button>
+  <mat-tab label="Chronologie"></mat-tab>
+  <mat-tab label="Documents"></mat-tab>
+</mat-tab-group>

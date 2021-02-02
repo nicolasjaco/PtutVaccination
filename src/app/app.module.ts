@@ -10,6 +10,7 @@ import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     //MatGridListModule
     MatToolbarModule,
     MatIconModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
