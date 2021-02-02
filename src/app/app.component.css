@@ -76,6 +76,7 @@ h2{
   font-family: FUTURA;
   font-style: medium;
   margin-top:20px;
+  border-left: 20px solid rgb(20, 197, 220);
 } 
 
 .maticon_bell{
@@ -95,4 +96,12 @@ h2{
 }
 .mat-tab-label-content{
   color: white;
+}
+
+#doc_button_share{
+  margin-left: 680px;
+}
+
+mat-card{
+  border-left: 20px solid rgb(170, 50, 220);
 }
