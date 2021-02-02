@@ -1,3 +1,25 @@
+mat-grid-tile {
+  background: lightblue;
+}
+
+.mat-toolbar {
+  background: rgba(0, 191, 165, 0.46);;
+  color: #fff;
+  font-family: Futura;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 4vw;
+  line-height: 16px;
+  color: #000000;
+  text-align: center;
+  padding: 0px;
+}
+
+.mat-button-toggle{
+  background-color: #0097A7;
+  opacity: 0.5; 
+}
+
 #tool_bar{
   background-color: #00BFA5;   
   opacity: 0.8;  
@@ -6,16 +28,6 @@
 
 .example-spacer {
   flex: 1 1 auto;
-}
-
-#toggleleft{
-    background-color: #0097A7;
-    opacity: 0.5;     
-}
-
-#toggleright{
-  background-color: #0097A7;
-  opacity: 0.5;
 }
 
 #sp2{
