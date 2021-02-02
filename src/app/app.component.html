@@ -1,23 +1,16 @@
-<div id="toolbar">
-  <mat-toolbar id="tool_bar">
-    <span id="sp1">
-      <mat-button-toggle id="toggleleft" value="left" aria-label="Text align left">
-        <mat-icon>format_align_left</mat-icon>
-      </mat-button-toggle>
-    </span>
-    <span class="example-spacer"></span>
+<mat-toolbar>
+  <mat-button-toggle id="menu" value="left" aria-label="Menu">
+    <mat-icon>menu</mat-icon>
+  </mat-button-toggle>
+  <span class="example-spacer"></span>
+  <span class="example-spacer">Carnet de vaccination</span>
+  <span class="example-spacer"></span>
+  <span class="example-spacer">J.Doe</span>
+  <mat-button-toggle id="parametre" class="icone">
+    <mat-icon>more_horiz</mat-icon>
+  </mat-button-toggle>
+</mat-toolbar>
 
-    <a mat-button routerLink="/">
-      <span id="sp2">Carnet de Vaccination</span>
-    </a>
-    <span class="example-spacer"></span>
-
-    <span id="sp3">J.Doe</span>
-    <span id="sp4">
-      <mat-button-toggle id="toggleright" value="...">...</mat-button-toggle>
-    </span>
-  </mat-toolbar>
-</div>
 <mat-tab-group mat-align-tabs="center">
   <mat-tab label="Calendrier">
     <h2>Rappels à venir</h2>
