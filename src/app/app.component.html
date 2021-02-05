@@ -1,17 +1,18 @@
 <mat-toolbar>
-  <mat-button-toggle id="menu" value="left" aria-label="Menu">
+  <button mat-icon-button id="menu" value="left" aria-label="Menu">
     <mat-icon>menu</mat-icon>
-  </mat-button-toggle>
+  </button>
   <span class="example-spacer"></span>
   <span class="example-spacer">Carnet de vaccination</span>
   <span class="example-spacer"></span>
   <span class="example-spacer">J.Doe</span>
-  <mat-button-toggle id="parametre" class="icone">
+  <button mat-icon-button id="parametre" class="icone">
     <mat-icon>more_horiz</mat-icon>
-  </mat-button-toggle>
+  </button>
 </mat-toolbar>
 
 <mat-tab-group mat-align-tabs="center">
+
   <mat-tab label="Calendrier">
     <h2>Rappels à venir</h2>
     <mat-accordion>
@@ -28,7 +29,6 @@
       </mat-expansion-panel>
     </mat-accordion>
 
-    <button id="btplus" mat-mini-fab>+</button>
   </mat-tab>
 
   <mat-tab label="Chronologie">
@@ -79,7 +79,7 @@
   </mat-tab>
   <mat-tab label="Documents">
     <div class="mat-card">
-      <mat-card> Calandrier vaccinal 2021
+      <mat-card> Calendrier vaccinal 2021
         <button mat-icon-button id="doc_button_share">
           <mat-icon>share</mat-icon>
         </button>
@@ -90,3 +90,4 @@
     </div>
   </mat-tab>
 </mat-tab-group>
+<button id="btplus" mat-mini-fab>+</button>

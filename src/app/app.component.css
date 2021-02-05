@@ -17,8 +17,9 @@ mat-grid-tile {
 }
 
 .mat-button-toggle{
-  background-color: #0097A7;
+  background-color: rgb(0,191,165,0.46);
   opacity: 0.5; 
+  
 }
 
 #tool_bar{
@@ -87,9 +88,12 @@ h2{
   background-color: #00BFA5;
   color:#FFC400;
   font-size: 2em;
-  margin: 450px 0px 0px 1450px;
-  position: fixed;
-}
+  position: fixed !important;
+  top: auto !important;
+  right: 20px !important;
+  bottom: 10px !important;
+  left: auto !important;
+  position: fixed !important;}
 .mat-tab-labels {
   background-color: rgb(0,191,165,0.84);
   
@@ -97,6 +101,7 @@ h2{
 .mat-tab-label-content{
   color: white;
 }
+
 
 #doc_button_share{
   margin-left: 680px;
