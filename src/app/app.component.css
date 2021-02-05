@@ -105,3 +105,16 @@ h2{
 mat-card{
   border-left: 20px solid rgb(170, 50, 220);
 }
+
+.mat-stepper-vertical {
+  margin-top: 8px;
+}
+
+.mat-step-header .mat-step-icon {
+  background-color: white; 
+  color:#0097A7;
+}
+.mat-step-header .mat-step-icon-selected {
+  background-color: white; 
+  color:rgb(170, 50, 220);
+}

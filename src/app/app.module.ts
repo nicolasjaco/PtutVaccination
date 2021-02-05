@@ -12,6 +12,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
+import { MatStepperModule } from '@angular/material/stepper';
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 
 
 
@@ -30,9 +32,13 @@ import {MatCardModule} from '@angular/material/card';
     MatIconModule,
     MatExpansionModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    MatStepperModule
   ],
-  providers: [],
+  providers: [{
+    provide: STEPPER_GLOBAL_OPTIONS,
+    useValue: { displayDefaultIndicatorType: false }
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
