@@ -1,0 +1,28 @@
+#btplus {
+    color: darkorange;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.container{
+    padding: 10px;
+}
+
+.mat-expansion-panel{
+    border-left: 10px solid #FFC400;
+}
+
+.mat-expansion-panel-header{
+    min-height: 85px;
+}
+
+.mat-expansion-panel-header .mat-icon{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+::ng-deep .mat-expansion-indicator{
+    margin-top: 25px;
+}

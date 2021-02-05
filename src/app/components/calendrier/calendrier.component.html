@@ -1,0 +1,19 @@
+<div class="container">
+ 
+  <h2>Rappels à venir</h2>
+ 
+  <mat-accordion>
+    <mat-expansion-panel class="accordion" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="panel_title">
+          <div>DTP<br/> Fait le 23/05/15</div>
+          <mat-icon>add_alert</mat-icon>
+        </mat-panel-title>
+      
+      </mat-expansion-panel-header>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<button id="btplus" mat-mini-fab>+</button>
