@@ -8,11 +8,12 @@ mat-grid-tile {
   font-family: Futura;
   font-style: normal;
   font-weight: 200;
-  font-size: medium;;
+  font-size:large;
   line-height: 16px;
   color: #000000;
   text-align: right;
   padding: 0px;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 6px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12);
   
 }
 
@@ -70,6 +71,9 @@ h2{
   width: 40%;
   margin-left: 20px;;
 }
+.mat-accordion .mat-expansion-panel {
+  margin-bottom: 10px;
+}
 
 .panel_title{
   color:black;
@@ -104,8 +108,19 @@ h2{
 
 
 #doc_button_share{
-  margin-left: 680px;
+  position: fixed !important;
+  right:80px !important;
+  top:auto !important;
+  
 }
+
+#doc_button_download{
+  position: fixed !important;
+  right:30px !important;
+ 
+  
+}
+
 
 mat-card{
   border-left: 20px solid rgb(170, 50, 220);
