@@ -13,11 +13,19 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatStepperModule } from '@angular/material/stepper';
+import {MatDialogModule} from '@angular/material/dialog'; 
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { CalendrierComponent } from './components/calendrier/calendrier.component';
 import { ChronologieComponent } from './components/chronologie/chronologie.component';
 import { DocumentsComponent } from './components/documents/documents.component';
+import { DialogRappelComponent } from './dialog-rappel/dialog-rappel.component';
+
+
+
 
 
 @NgModule({
@@ -25,7 +33,8 @@ import { DocumentsComponent } from './components/documents/documents.component';
     AppComponent,
     CalendrierComponent,
     ChronologieComponent,
-    DocumentsComponent
+    DocumentsComponent,
+    DialogRappelComponent
   ],
   imports: [
     BrowserModule,
@@ -38,12 +47,17 @@ import { DocumentsComponent } from './components/documents/documents.component';
     MatExpansionModule,
     MatTabsModule,
     MatCardModule,
-    MatStepperModule
+    MatStepperModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatCheckboxModule
   ],
   providers: [{
     provide: STEPPER_GLOBAL_OPTIONS,
     useValue: { displayDefaultIndicatorType: false }
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogRappelComponent]
 })
 export class AppModule { }
