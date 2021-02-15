@@ -12,15 +12,29 @@ export class CalendrierComponent implements OnInit {
   panelOpenState = false;
 
   constructor(private matDialog: MatDialog) { }
+
   openDialog() {
     const dialogConfig = new MatDialogConfig();
     this.matDialog.open(DialogRappelComponent, dialogConfig);
     dialogConfig.height='600px';
   }
 
-  ngOnInit(): void {
+  openDialogajout() {
+    const dialogRef = this.matDialog.open(DialogContentExampleDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
-  
-
+  ngOnInit(): void {
+  }  
 }
+
+@Component({
+  selector: 'ajouter-vaccin.component',
+  templateUrl: '../ajouter-vaccin.component.html',
+})
+
+export class DialogContentExampleDialog {}
+
