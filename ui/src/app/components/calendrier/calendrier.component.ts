@@ -1,6 +1,7 @@
 import { Component,Inject, OnInit } from '@angular/core';
 import {MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DialogRappelComponent } from 'src/app/dialog-rappel/dialog-rappel.component';
+import {AjoutVaccinComponent} from 'src/app/components/ajout-vaccin/ajout-vaccin.component'
 
 @Component({
   selector: 'app-calendrier',
@@ -19,11 +20,11 @@ export class CalendrierComponent implements OnInit {
     dialogConfig.height='600px';
   }
 
-  openDialogajout() {
-    const dialogRef = this.matDialog.open(DialogContentExampleDialog);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+  openDialogajout() :void {
+    const dialogRef = this.matDialog.open(AjoutVaccinComponent, {
+      width: '500px',
+      height:'750px'
+      
     });
   }
 
@@ -31,10 +32,5 @@ export class CalendrierComponent implements OnInit {
   }  
 }
 
-@Component({
-  selector: 'ajouter-vaccin.component',
-  templateUrl: '../ajouter-vaccin.component.html',
-})
 
-export class DialogContentExampleDialog {}
 
