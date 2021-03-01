@@ -1,10 +1,13 @@
 #btplus {
-  color: darkorange;
+  color: #ffc400;
   position: fixed;
   bottom: 10px;
   right: 10px;
+  font-size: 40px;
 }
-
+.btn-alerte {
+  color: #ffc400;
+}
 .container {
   padding: 10px;
 }

@@ -1,50 +1,47 @@
-h2{
-    text-align: center;
+h2 {
+  text-align: center;
 }
 
 .example-form {
-    min-width: 50px;
-    max-width: 100px;
-    width: 100%;
-    
-  }
+  min-width: 50px;
+  max-width: 100px;
+  width: 100%;
+}
 
-  .example-full-width {
-    width: 100%;
-    margin-left: 250px;
-    
-  }
-  #input{
-    width: 200px;
-    height: 20px;    
-    border: 5px solid #00f7ffa6;
-    border-radius: 10px;
-  }
+.example-full-width {
+  width: 100%;
+  align-content: center;
+}
+#input {
+  width: 200px;
+  height: 20px;
+  border: 5px solid #00f7ffa6;
+  border-radius: 10px;
+}
 
-  .mat-icon {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-  }
+.mat-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
 
-  .btn_help {
-    margin-right: 40px;
-    color: #FFC400;
-  }
+.btn_help {
+  margin-right: 40px;
+  color: #ffc400;
+}
 
-  .btn_add{
-    color: #FFC400;
-  }
- 
+.btn_add {
+  color: #ffc400;
+}
 
-  .mat_card {
-    border-left: 10px solid #00f7ffa6;
-    background-color: #ecf1f0;     
-    margin-top: 10px;  
-  }
+.mat_card {
+  border-left: 10px solid #00f7ffa6;
+  background-color: #ecf1f0;
+  margin-top: 10px;
+}
 
-  #btn_close{
-    background-color: #FFC400;
-    margin-left: 45%; 
-    color: white;
+#btn_close {
+  background-color: #ffc400;
+  margin-left: 45%;
+  color: white;
 }
