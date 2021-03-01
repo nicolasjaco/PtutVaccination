@@ -24,6 +24,7 @@ import { ChronologieComponent } from './components/chronologie/chronologie.compo
 import { DocumentsComponent } from './components/documents/documents.component';
 import { DialogRappelComponent } from './dialog-rappel/dialog-rappel.component';
 import { AjoutVaccinComponent } from './components/ajout-vaccin/ajout-vaccin.component';
+import { DialogueAjoutVaccComponent } from './components/dialogue-ajout-vacc/dialogue-ajout-vacc.component';
 
 
 
@@ -36,7 +37,8 @@ import { AjoutVaccinComponent } from './components/ajout-vaccin/ajout-vaccin.com
     ChronologieComponent,
     DocumentsComponent,
     DialogRappelComponent,
-    AjoutVaccinComponent
+    AjoutVaccinComponent,
+    DialogueAjoutVaccComponent
   ],
   imports: [
     BrowserModule,

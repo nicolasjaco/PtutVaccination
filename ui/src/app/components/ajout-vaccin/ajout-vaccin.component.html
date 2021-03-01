@@ -1,13 +1,23 @@
-<h2>Ajouter vaccin</h2>
+<h2>Ajouter vaccin :</h2>
 
 <form class="example-form">
   <mat-form-field class="example-full-width">
-    <mat-label>Recherche : </mat-label>
-    <input matInput>
-</mat-form-field>
-
-<mat-card>Avaxim 160 <mat-icon>help</mat-icon> <mat-icon>add_circle_outline</mat-icon></mat-card>
+    <input id="input" matInput placeholder="Recherche" matInput>
+  </mat-form-field>
+</form>
 
 
+<form class="mat_card_form">
+<mat-card class="mat_card">Avaxim 160
+    <mat-icon class="btn_help">help</mat-icon>
+    <mat-icon (click)="openDialogajout()" class="btn_add">add_circle_outline</mat-icon>
+</mat-card>
+<mat-card class="mat_card">Blabla
+  <mat-icon class="btn_help">help</mat-icon>
+  <mat-icon (click)="openDialogajout()" class="btn_add">add_circle_outline</mat-icon>
+</mat-card>
+</form>
 
-<button mat-raised-button color="accent">Valider</button>
+<mat-dialog-actions>
+  <button mat-raised-button id="btn_close" (click)="close()">Close</button>
+</mat-dialog-actions>

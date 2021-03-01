@@ -22,8 +22,8 @@ export class CalendrierComponent implements OnInit {
 
   openDialogajout() :void {
     const dialogRef = this.matDialog.open(AjoutVaccinComponent, {
-      width: '500px',
-      height:'750px'
+      width: '750px',
+      height:'1000px'
       
     });
   }
