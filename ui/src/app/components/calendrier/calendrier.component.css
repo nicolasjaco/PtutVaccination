@@ -1,28 +1,40 @@
 #btplus {
-    color: darkorange;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
+  color: darkorange;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }
 
-.container{
-    padding: 10px;
+.container {
+  padding: 10px;
 }
 
-.mat-expansion-panel{
-    border-left: 10px solid #FFC400;
+.mat-expansion-panel {
+  border-left: 10px solid #ffc400;
 }
 
-.mat-expansion-panel-header{
-    min-height: 85px;
+.mat-expansion-panel-header {
+  min-height: 85px;
 }
 
-.mat-expansion-panel-header .mat-icon{
-    position: absolute;
-    top: 15px;
-    right: 15px;
+.mat-expansion-panel-header .mat-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
-::ng-deep .mat-expansion-indicator{
-    margin-top: 25px;
+::ng-deep .mat-expansion-indicator {
+  margin-top: 25px;
+}
+
+.img-zephyr {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  left: 72%;
+  transform: rotate(-11.8deg);
+}
+
+.btn-info {
+  margin-right: 40px;
 }

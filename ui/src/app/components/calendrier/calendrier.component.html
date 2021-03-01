@@ -1,15 +1,21 @@
 <div class="container">
- 
   <h2>Rappels à venir</h2>
- 
+  <img class="img-zephyr" src="assets/images/zephyr.png">
   <mat-accordion>
-    <mat-expansion-panel class="accordion" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel
+      class="accordion"
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
       <mat-expansion-panel-header>
         <mat-panel-title class="panel_title">
-          <div>DTP<br/> Fait le 23/05/15</div>
+          <div>
+            DTP<br />
+            Fait le 23/05/15
+          </div>
+          <mat-icon class="btn-info" color="accent">info</mat-icon>
           <mat-icon (click)="openDialog()">add_alert</mat-icon>
         </mat-panel-title>
-      
       </mat-expansion-panel-header>
       <p>Lorem ipsum dolor sit amet.</p>
     </mat-expansion-panel>
