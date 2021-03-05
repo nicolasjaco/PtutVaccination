@@ -1,60 +1,41 @@
-// import User from "../models/UserModel";
-// import History from "../models/HistoryModel";
 
-// module.exports.findById = function (req, res) {
-//   User
-//     .findById(req.params.id)
-//     .exec(function (err, user) {
-//       res.status(200).json(user);
-//     });
-// };
+var Database = require('../config/db.js');
 
-// module.exports.update = function (req, res) {
-//   User
-//     .findByIdAndUpdate(
-//       req.body._id,
-//       req.body, {
-//         new: true
-//       },
-//       (err, user) => {
-//         if (err)
-//           console.log(err);
+module.exports.getAll = function (req, res) {
+    let connexion = new Database();
+    let client = connexion.getClient();
+    client.query('SELECT * FROM users', (err, resultats) => {
+        res.status(200).json(resultats.rows);
+        connexion.disconnect();
+    });
+};
 
-//         // Create history 
-//         let history = new History();
-//         history.createInstance(user, "a modifié son profil");
+module.exports.getById = function (req, res) {
+    let connexion = new Database();
+    let client = connexion.getClient();
+    client.query('SELECT * FROM users WHERE ID = \''+ req.params.id +'\'', (err, resultats) => {
+        res.status(200).json(resultats.rows);
+        connexion.disconnect();
+    });
+};
 
-//         // Return user after update 
-//         res.status(200).json(user);
-//       });
-// };
+module.exports.create = function (req, res) {
+    let connexion = new Database();
+    let client = connexion.getClient();
+    client.query('INSERT INTO users VALUES ('+ req.body.id +', \''+ req.body.mail +'\', \''+ req.body.password +'\');', (err, resultats) => {
+        console.log("err", err);
+        res.status(200).json(resultats);
+        connexion.disconnect();
+    });
+};
 
-// module.exports.findAll = function (req, res) {
-//   User.find((err, issues) => {
-//     if (err)
-//       console.log(err);
-//     else
-//       res.json(issues);
-//   });
-// };
 
-// module.exports.search = function (req, res) {
-//   let keywords = req.params.keywords;
-//   User.find({ 
-//     $or: [
-//       { firstName: { $regex: keywords, $options: 'i' }}, 
-//       { lastName: { $regex: keywords, $options: 'i' }}, 
-//       { $where: `this.promotion.toString().indexOf('${keywords}') !== -1` },
-//       { city: { $regex: keywords, $options: 'i' }},
-//       // { description: { $regex: keywords, $options: 'i' }},
-//       { keywords: { $regex: keywords, $options: 'i' }},
-//     ]},
-//   function (err, user) {
-//     if (err) {
-//       console.log(err);
-//       res.send(err);
-//     }
-//     console.log(user);
-//     res.json(user);
-//   });
-// };
+module.exports.deleteById = function (req, res) {
+    let connexion = new Database();
+    let client = connexion.getClient();
+    client.query('DELETE FROM users WHERE ID = \''+ req.params.id +'\'', (err, resultats) => {
+        res.status(200).json(resultats.rows);
+        connexion.disconnect();
+    });
+};
+

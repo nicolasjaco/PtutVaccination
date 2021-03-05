@@ -5,7 +5,6 @@ import bodyParser from 'body-parser';
 import CtrlUser from './controllers/UserController';
 
 const config = require('./config/config.js');
-const { Client } = require('pg')
 
 // Création de l'application
 const app = express();
@@ -23,24 +22,17 @@ app.use(function (err, req, res, next) {
     }
   });
 
-// SQL connection
-const client = new Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'ptut-vaccination',
-  password: 'azerty',
-  port: 5432,
-})
-client.connect();
-
 // API definition
-// Profile
-//router.get('/user/:id', auth, CtrlUser.findById);
+// Users
+router.get('/users/', CtrlUser.getAll);
+router.get('/user/:id', CtrlUser.getById);
+router.post('/user', CtrlUser.create);
+router.delete('/user/:id', CtrlUser.deleteById);
+// Vaccins
 
-client.query('SELECT * FROM users', (err, res) => {
-  console.log(err, res)
-  client.end()
-})
+// Rappels
+
+
 
 // server startup
 app.use('/api', router);
