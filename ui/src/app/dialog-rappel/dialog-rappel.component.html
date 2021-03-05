@@ -1,16 +1,18 @@
 <h2 mat-dialog-title>Choisir une date de rappel</h2>
 
 <mat-dialog-content>
-          
-    <mat-label>Me rappeler: </mat-label>
-    <p>
-        <mat-checkbox>1 semaine avant </mat-checkbox>
-    </p>
-    <p>
-        <mat-checkbox>2 semaines avant </mat-checkbox>
-    </p>
+  <input type="date" class="input" matInput />
+  <br />
+  <mat-label>Me rappeler: </mat-label>
+  <p>
+    <mat-checkbox>1 semaine avant </mat-checkbox>
+  </p>
+
+  <p>
+    <mat-checkbox>2 semaines avant </mat-checkbox>
+  </p>
 </mat-dialog-content>
 
 <mat-dialog-actions>
-    <button class="mat-raised-button" (click)="close()">Close</button>
+  <button class="mat-raised-button" (click)="close()">Close</button>
 </mat-dialog-actions>
