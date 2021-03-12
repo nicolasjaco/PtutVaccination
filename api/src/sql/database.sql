@@ -15,8 +15,9 @@ CREATE TABLE maladie (
 );
 
 CREATE TABLE maladieVaccin (
+	IdMaladieVaccin INT PRIMARY KEY NOT NULL,
 	IdMaladie INT NOT NULL,
-	IdVaccin INT PRIMARY KEY NOT NULL
+	IdVaccin INT NOT NULL
 );
 
 CREATE TABLE vaccin (
@@ -38,13 +39,13 @@ CREATE TABLE injectionUtilisateur (
 CREATE TABLE injection (
 	IdInjection INT PRIMARY KEY NOT NULL,
 	IdVaccin INT NOT NULL,
-	TempsMin INT NOT NULL,
-	TempsMax INT NOT NULL,
+	TempsMin INT,
+	TempsMax INT,
 	NbInjection INT NOT NULL,
-	AgeMin INT NOT NULL,
-	AgeMax INT NOT NULL,
-	Curatif VARCHAR(100) NOT NULL,
-   Préventif VARCHAR(100) NOT NULL
+	AgeMin INT,
+	AgeMax INT,
+	Curatif VARCHAR(100),
+   Préventif VARCHAR(100) 
 );
 
 CREATE TABLE rappelInjection (

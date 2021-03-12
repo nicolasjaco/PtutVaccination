@@ -1,1 +1,1 @@
-INSERT INTO utilisateur VALUES (1, 'ludovic.yol@gmail.com', 'azerty');
+INSERT INTO utilisateur VALUES (1,'01/01/95','ludovic','yol','M', 'ludovic.yol@gmail.com', 'azerty');
