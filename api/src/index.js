@@ -3,6 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 
 import CtrlUser from './controllers/UserController';
+import CtrlVaccin from './controllers/VaccinController';
 
 const config = require('./config/config.js');
 
@@ -29,7 +30,7 @@ router.get('/user/:id', CtrlUser.getById);
 router.post('/user', CtrlUser.create);
 router.delete('/user/:id', CtrlUser.deleteById);
 // Vaccins
-
+router.get('/vaccins/', CtrlVaccin.getAll);
 // Rappels
 
 
