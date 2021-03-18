@@ -6,16 +6,11 @@
   </mat-form-field>
 </form>
 
-
-<form class="mat_card_form">
-<mat-card class="mat_card">Avaxim 160
+<form class="mat_card_form" *ngIf="vaccins">
+  <mat-card class="mat_card" *ngFor="let vaccin of vaccins">{{ vaccin.nom }}
     <mat-icon class="btn_help">help</mat-icon>
     <mat-icon (click)="openDialogajout()" class="btn_add">add_circle_outline</mat-icon>
-</mat-card>
-<mat-card class="mat_card">Blabla
-  <mat-icon class="btn_help">help</mat-icon>
-  <mat-icon (click)="openDialogajout()" class="btn_add">add_circle_outline</mat-icon>
-</mat-card>
+  </mat-card>
 </form>
 
 <mat-dialog-actions>

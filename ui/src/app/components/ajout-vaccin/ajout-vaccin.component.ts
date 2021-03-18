@@ -1,6 +1,8 @@
+import { Vaccin } from './../../model/vaccin';
+import { VaccinsService } from './../../services/vaccins.service';
 import { Component, OnInit } from '@angular/core';
-import {MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import {DialogueAjoutVaccComponent} from 'src/app/components/dialogue-ajout-vacc/dialogue-ajout-vacc.component'
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DialogueAjoutVaccComponent } from 'src/app/components/dialogue-ajout-vacc/dialogue-ajout-vacc.component'
 @Component({
   selector: 'app-ajout-vaccin',
   templateUrl: './ajout-vaccin.component.html',
@@ -8,20 +10,28 @@ import {DialogueAjoutVaccComponent} from 'src/app/components/dialogue-ajout-vacc
 })
 export class AjoutVaccinComponent implements OnInit {
 
-  constructor(private matDialog: MatDialog) { }
+  vaccins: Array<Vaccin> = [];
+
+  constructor(
+    private matDialog: MatDialog,
+    private vaccinsService: VaccinsService,
+  ) { }
 
   ngOnInit(): void {
-  }
-
-  openDialogajout() :void {
-    const dialogRef = this.matDialog.open(DialogueAjoutVaccComponent, {
-      width: '375px',
-      height:'500px'
-      
+    this.vaccinsService.getAllVaccins().subscribe((data: any) => {
+      console.log(data);
+      this.vaccins = data;
     });
   }
 
-  close(){
+  openDialogajout(): void {
+    const dialogRef = this.matDialog.open(DialogueAjoutVaccComponent, {
+      width: '375px',
+      height: '500px'
+    });
+  }
+
+  close(): void {
     this.matDialog.closeAll();
   }
 }
