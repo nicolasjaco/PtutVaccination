@@ -2,14 +2,25 @@
 
 <form class="example-form">
   <mat-form-field class="example-full-width">
-    <input id="input" matInput placeholder="Recherche" matInput>
+    <input id="input" matInput placeholder="Recherche" />
   </mat-form-field>
 </form>
 
 <form class="mat_card_form" *ngIf="vaccins">
-  <mat-card class="mat_card" *ngFor="let vaccin of vaccins">{{ vaccin.nom }}
-    <mat-icon class="btn_help">help</mat-icon>
-    <mat-icon (click)="openDialogajout()" class="btn_add">add_circle_outline</mat-icon>
+  <mat-card class="mat_card" *ngFor="let vaccin of vaccins"
+    >{{ vaccin.nom }}
+
+    <mat-icon
+      class="btn_help"
+      matTooltip="{{ vaccin.informationsvaccin }}"
+      matToolTipTouchGestures="on"
+      matTooltipClass="tooltip"
+      >help</mat-icon
+    >
+
+    <mat-icon (click)="openDialogajout()" class="btn_add"
+      >add_circle_outline</mat-icon
+    >
   </mat-card>
 </form>
 

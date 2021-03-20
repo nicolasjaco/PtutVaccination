@@ -14,3 +14,7 @@
   background-color: transparent !important;
   color: rgb(170, 50, 220) !important;
 }
+.mat-tooltip {
+  background: #00bfa5;
+  font-size: large;
+}
