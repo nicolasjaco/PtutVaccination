@@ -1,5 +1,13 @@
-<div class="container">
-  <img class="img-zephyr" src="assets/images/zephyr.png" />
+<div class="container" (mouseenter)="tooltip.show()">
+  <img
+    #tooltip="matTooltip"
+    class="img-zephyr"
+    src="assets/images/zephyr.png"
+    matTooltip="Bonjour Jonh, vous avez 1 rappel à venir"
+    matToolTipTouchGestures="on"
+    matTooltipPosition="left"
+    matTooltipClass="tooltip"
+  />
   <h2>Rappels à venir</h2>
   <mat-accordion>
     <mat-expansion-panel
@@ -24,4 +32,15 @@
   </mat-accordion>
 </div>
 
-<button (click)="openDialogajout()" id="btplus" mat-mini-fab>+</button>
+<button
+  (mouseenter)="tooltip.show()"
+  #tooltip="matTooltip"
+  (click)="openDialogajout()"
+  id="btplus"
+  mat-mini-fab
+  matTooltip="Ajouter un vaccin"
+  matToolTipTouchGestures="on"
+  matTooltipClass="tooltip"
+>
+  +
+</button>

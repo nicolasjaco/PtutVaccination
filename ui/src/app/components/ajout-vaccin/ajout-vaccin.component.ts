@@ -10,6 +10,7 @@ import { DialogueAjoutVaccComponent } from "src/app/components/dialogue-ajout-va
 })
 export class AjoutVaccinComponent implements OnInit {
   vaccins: Array<Vaccin> = [];
+  filterTerm: string = "";
 
   constructor(
     private matDialog: MatDialog,
@@ -18,7 +19,6 @@ export class AjoutVaccinComponent implements OnInit {
 
   ngOnInit(): void {
     this.vaccinsService.getAllVaccins().subscribe((data: any) => {
-      console.log(data);
       this.vaccins = data;
     });
   }

@@ -21,6 +21,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatTooltipModule } from "@angular/material/tooltip";
+import { FormsModule } from "@angular/forms";
 
 import { CalendrierComponent } from "./components/calendrier/calendrier.component";
 import { ChronologieComponent } from "./components/chronologie/chronologie.component";
@@ -28,6 +29,7 @@ import { DocumentsComponent } from "./components/documents/documents.component";
 import { DialogRappelComponent } from "./dialog-rappel/dialog-rappel.component";
 import { AjoutVaccinComponent } from "./components/ajout-vaccin/ajout-vaccin.component";
 import { DialogueAjoutVaccComponent } from "./components/dialogue-ajout-vacc/dialogue-ajout-vacc.component";
+import { VaccinFilterPipe } from "./vaccin-filter.pipe";
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { DialogueAjoutVaccComponent } from "./components/dialogue-ajout-vacc/dia
     DialogRappelComponent,
     AjoutVaccinComponent,
     DialogueAjoutVaccComponent,
+    VaccinFilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import { DialogueAjoutVaccComponent } from "./components/dialogue-ajout-vacc/dia
     MatCheckboxModule,
     MatInputModule,
     MatTooltipModule,
+    FormsModule,
   ],
   providers: [
     {

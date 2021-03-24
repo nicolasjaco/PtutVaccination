@@ -1,13 +1,17 @@
-<h2>Ajouter vaccin :</h2>
-
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input id="input" matInput placeholder="Recherche" />
-  </mat-form-field>
-</form>
+<h2>Ajouter un vaccin :</h2>
+<input
+  class="example-form"
+  type="text"
+  id="input"
+  matInput
+  placeholder="Recherche"
+  [(ngModel)]="filterTerm"
+/>
 
 <form class="mat_card_form" *ngIf="vaccins">
-  <mat-card class="mat_card" *ngFor="let vaccin of vaccins"
+  <mat-card
+    class="mat_card"
+    *ngFor="let vaccin of vaccins | vaccinFilter: filterTerm"
     >{{ vaccin.nom }}
 
     <mat-icon
