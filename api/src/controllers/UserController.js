@@ -13,7 +13,7 @@ module.exports.getAll = function (req, res) {
 module.exports.getById = function (req, res) {
     let connexion = new Database();
     let client = connexion.getClient();
-    client.query('SELECT * FROM users WHERE ID = \''+ req.params.id +'\'', (err, resultats) => {
+    client.query('SELECT * FROM users WHERE IDUTILISATEUR = \''+ req.params.id +'\'', (err, resultats) => {
         res.status(200).json(resultats.rows);
         connexion.disconnect();
     });
@@ -33,7 +33,7 @@ module.exports.create = function (req, res) {
 module.exports.deleteById = function (req, res) {
     let connexion = new Database();
     let client = connexion.getClient();
-    client.query('DELETE FROM users WHERE ID = \''+ req.params.id +'\'', (err, resultats) => {
+    client.query('DELETE FROM users WHERE idutilisateur = \''+ req.params.id +'\'', (err, resultats) => {
         res.status(200).json(resultats.rows);
         connexion.disconnect();
     });

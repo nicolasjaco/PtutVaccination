@@ -1,3 +1,11 @@
+DROP TABLE users;
+DROP TABLE maladie;
+DROP TABLE maladieVaccin;
+DROP TABLE vaccin;
+DROP TABLE injectionUtilisateur;
+DROP TABLE injection;
+DROP TABLE rappelInjection;
+
 CREATE TABLE users (
 	IdUtilisateur INT PRIMARY KEY NOT NULL,
 	dateDeNaissance DATE NOT NULL,
