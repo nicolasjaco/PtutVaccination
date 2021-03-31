@@ -1,16 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ChronologieComponent } from './chronologie.component';
+import { ChronologieComponent } from "./chronologie.component";
 
-describe('ChronologieComponent', () => {
+describe("ChronologieComponent", () => {
   let component: ChronologieComponent;
   let fixture: ComponentFixture<ChronologieComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChronologieComponent ]
-    })
-    .compileComponents();
+      declarations: [ChronologieComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('ChronologieComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

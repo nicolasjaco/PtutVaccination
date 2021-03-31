@@ -47,6 +47,7 @@ CREATE TABLE injectionUtilisateur (
 CREATE TABLE injection (
 	IdInjection INT PRIMARY KEY NOT NULL,
 	IdVaccin INT NOT NULL,
+	Nom VARCHAR(100) NOT NULL,
 	TempsMin INT,
 	TempsMax INT,
 	NbInjection INT NOT NULL,

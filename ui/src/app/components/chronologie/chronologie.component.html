@@ -1,28 +1,20 @@
 <mat-vertical-stepper>
-  <mat-step label="10 Janvier 2021" state="step1">
-    Rappel DTP
-  </mat-step>
-  <mat-step label="5 Novembre 2020" state="step2">
-    Step 2 Content Will Be Here
-  </mat-step>
-  <mat-step label="12 Mars 2013" state="step3">
-    Step 3 Content Will Be Here. It's Done Now...
+  <mat-step
+    *ngFor="let injection of this.userinjections"
+    label="{{ injection.date }}"
+    state="step1"
+  >
+    {{ injection.numero_lot }}
   </mat-step>
 
   <ng-template matStepperIcon="step1">
     <mat-icon>calendar_today</mat-icon>
   </ng-template>
-  <ng-template matStepperIcon="step2">
-    <mat-icon>calendar_today</mat-icon>
-  </ng-template>
-  <ng-template matStepperIcon="step3">
-    <mat-icon>calendar_today</mat-icon>
-  </ng-template>
+
   <ng-template matStepperIcon="edit">
     <mat-icon>calendar_today</mat-icon>
   </ng-template>
   <ng-template matStepperIcon="done">
     <mat-icon>calendar_today</mat-icon>
   </ng-template>
-
 </mat-vertical-stepper>

@@ -3,10 +3,16 @@
 
 <div>
   <p>Date d'ajout :</p>
-  <input type="date" class="input" matInput />
+  <input type="date" class="input" matInput [(ngModel)]="dateOfInjection" />
   <br />
   <p>Numéro du Lot :</p>
-  <input class="input" matInput placeholder="N° Lot" matInput />
+  <input
+    class="input"
+    matInput
+    placeholder="N° Lot"
+    matInput
+    [(ngModel)]="num_lot"
+  />
 </div>
 <mat-dialog-actions>
   <button mat-raised-button id="btn_valider" (click)="close()">Valider</button>
