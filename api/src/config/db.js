@@ -8,7 +8,7 @@ class Database {
             user: 'postgres',
             host: 'localhost',
             database: 'ptut-vaccination',
-            password: 'azerty',
+            password: 'bunychou66',
             port: 5432,
         })
         this.client.connect();

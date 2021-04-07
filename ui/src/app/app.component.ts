@@ -1,6 +1,5 @@
 import { Component, ViewEncapsulation } from "@angular/core";
 import { User } from "./model/user";
-
 import { UsersService } from "./services/users.service";
 
 @Component({
@@ -12,6 +11,9 @@ import { UsersService } from "./services/users.service";
 export class AppComponent {
   title = "PtutVaccination";
   user = <User>{};
+  currentDate = new Date();
+
+
   constructor(private usersService: UsersService) {}
   ngOnInit(): void {
     this.usersService.getUserById(1).subscribe((data: any) => {
@@ -19,11 +21,16 @@ export class AppComponent {
         ...data[0],
         datedenaissance: new Date(data[0].datedenaissance),
       };
+      console.log(this.calcAgeMonth());
     });
   }
   calcAgeMonth() {
     let timeDiff = Math.abs(Date.now() - this.user.datedenaissance.getTime());
-    let age = Math.floor(timeDiff / (1000 * 3600 * 24) / 30.4375);
+    console.log(timeDiff);
+    let age = Math.floor(timeDiff / (1000 * 3600 * 24) / 30.4375); 
+    console.log(age);   
     return age;
   }
+
+
 }

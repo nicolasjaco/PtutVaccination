@@ -5,6 +5,7 @@ DROP TABLE vaccin;
 DROP TABLE injectionUtilisateur;
 DROP TABLE injection;
 DROP TABLE rappelInjection;
+DROP TABLE maladieCalendrier
 
 CREATE TABLE users (
 	IdUtilisateur INT PRIMARY KEY NOT NULL,
@@ -60,4 +61,10 @@ CREATE TABLE injection (
 CREATE TABLE rappelInjection (
 	IdRappelUser INT PRIMARY KEY NOT NULL,
 	date DATE NOT NULL
-)
+);
+
+CREATE TABLE maladieCalendrier (
+	IdMaladie INT PRIMARY KEY NOT NULL,
+	NomMaladie VARCHAR(100),
+	Calendrier INT 
+);
