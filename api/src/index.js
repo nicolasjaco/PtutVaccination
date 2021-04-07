@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import CtrlUser from './controllers/UserController';
 import CtrlVaccin from './controllers/VaccinController';
 import CtrlUserInjection from './controllers/UserInjectionController';
+import CtrlMaladiCalendrier from './controllers/MaladieCalendrierController';
 
 const config = require('./config/config.js');
 
@@ -37,6 +38,7 @@ router.get('/vaccins/', CtrlVaccin.getAll);
 router.get('/userinjections/', CtrlUserInjection.getAll);
 router.post('/userinjection', CtrlUserInjection.create);
 router.delete('/userinjection/:id', CtrlUserInjection.deleteById);
+router.get('/maladiecalendrier/:id', CtrlMaladiCalendrier.getById)
 
 
 

@@ -4,6 +4,8 @@ import { DialogRappelComponent } from "src/app/dialog-rappel/dialog-rappel.compo
 import { AjoutVaccinComponent } from "src/app/components/ajout-vaccin/ajout-vaccin.component";
 import { User } from "src/app/model/user";
 import { UsersService } from "src/app/services/users.service";
+import {MaladieCalendrier} from "src/app/model/maladiecalendrier";
+import {MaladiecalendrierService} from "src/app/services/maladiecalendrier.service";
 
 @Component({
   selector: "app-calendrier",
@@ -13,10 +15,13 @@ import { UsersService } from "src/app/services/users.service";
 export class CalendrierComponent implements OnInit {
   panelOpenState: boolean = false;
   user: User = <User>{};
+  maladiecldr:Array<MaladieCalendrier> = [];
+  maladie:string="";
 
   constructor(
     private matDialog: MatDialog,
-    private usersService: UsersService
+    private usersService: UsersService,
+    private maladiecalendrier:MaladiecalendrierService
   ) {}
 
   openDialog() {
@@ -38,6 +43,24 @@ export class CalendrierComponent implements OnInit {
         ...data[0],
         datedenaissance: new Date(data[0].datedenaissance),
       };
+      console.log(this.calcAgeMonth())
+      console.log(this.checkAgeVaccin());
     });
+    this.maladiecalendrier.getMaladieCalendrierById(30).subscribe((data: any) => {
+      this.maladiecldr = data;        
+    });
+    
   }
+  calcAgeMonth() {
+    let timeDiff = Math.abs(Date.now() - this.user.datedenaissance.getTime());   
+    let age = Math.floor(timeDiff / (1000 * 3600 * 24) / 30.4375);        
+    return age;
+  }
+
+checkAgeVaccin(){  
+  if (this.calcAgeMonth()>=this.maladiecldr[0].calendrier){     
+    this.maladie=this.maladiecldr[0].nommaladie;       
+  }
+  return this.maladie;
+}
 }
