@@ -69,6 +69,7 @@ import { VaccinFilterPipe } from "./vaccin-filter.pipe";
       useValue: { displayDefaultIndicatorType: false },
     },
   ],
+
   bootstrap: [AppComponent],
   entryComponents: [DialogRappelComponent],
 })

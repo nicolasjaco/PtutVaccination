@@ -1,7 +1,7 @@
 <mat-vertical-stepper>
   <mat-step
     *ngFor="let injection of this.userinjections"
-    label="{{ injection.date }}"
+    label="{{ injection.date | date: 'shortDate' }}"
     state="step1"
   >
     {{ injection.numero_lot }}

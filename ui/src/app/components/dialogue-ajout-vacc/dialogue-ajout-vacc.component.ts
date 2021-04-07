@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { FormControl } from "@angular/forms";
 import {
   MatDialog,
@@ -23,7 +23,8 @@ export class DialogueAjoutVaccComponent implements OnInit {
     private matDialog: MatDialog,
     private userinjectionService: UserinjectionService
   ) {}
-
+  @Output()
+  notifyAjoutInjection: EventEmitter<any> = new EventEmitter();
   ngOnInit(): void {
     this.userinjectionService.getAllUserInjections().subscribe((data: any) => {
       this.userinjections = data;
@@ -40,7 +41,7 @@ export class DialogueAjoutVaccComponent implements OnInit {
       .subscribe((data: any) => {
         this.userinjection = data[0];
       });
-    console.log(this.userinjections);
     this.matDialog.closeAll();
+    location.reload();
   }
 }
