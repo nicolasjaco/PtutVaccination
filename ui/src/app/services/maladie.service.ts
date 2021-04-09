@@ -11,6 +11,6 @@ export class MaladieService {
   constructor(private http: HttpClient) {}
 
   getMaladieById(id: number): Observable<object> {
-    return this.http.get(this.BASE_URL + "maladie/29");
+    return this.http.get(this.BASE_URL + "maladie/30");
   }
 }

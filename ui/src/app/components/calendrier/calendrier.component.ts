@@ -1,6 +1,6 @@
-import { Component, Inject, OnInit } from "@angular/core";
+import { Component, Inject, OnInit, Type } from "@angular/core";
 import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
-import { DialogRappelComponent } from "src/app/dialog-rappel/dialog-rappel.component";
+import { DialogRappelComponent } from "src/app/components/dialog-rappel/dialog-rappel.component";
 import { AjoutVaccinComponent } from "src/app/components/ajout-vaccin/ajout-vaccin.component";
 import { User } from "src/app/model/user";
 import { UsersService } from "src/app/services/users.service";
@@ -47,13 +47,12 @@ export class CalendrierComponent implements OnInit {
         ...data[0],
         datedenaissance: new Date(data[0].datedenaissance),
       };
+      console.log(data[0].datedenaissance);      
       this.calcAgeMonth();
+      this.checkAgeVaccin();
     });
-    this.maladieCalendrier
-      .getMaladieCalendrierById(30)
-      .subscribe((data: any) => {
-        this.maladiecldr = data;
-        this.checkAgeVaccin();
+    this.maladieCalendrier.getMaladieCalendrierById(30).subscribe((data: any) => {
+       this.maladiecldr = data;       
       });
     this.maladieService.getMaladieById(58).subscribe((data: any) => {
       this.maladieInfo = data;
