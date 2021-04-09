@@ -39,9 +39,10 @@ router.get('/vaccins/', CtrlVaccin.getAll);
 router.get('/userinjections/', CtrlUserInjection.getAll);
 router.post('/userinjection', CtrlUserInjection.create);
 router.delete('/userinjection/:id', CtrlUserInjection.deleteById);
-router.get('/maladiecalendrier/:id', CtrlMaladieCalendrier.getById)
-router.get('/maladie/:id', CtrlMaladie.getById)
-
+router.get('/maladiecalendrier',CtrlMaladieCalendrier.getAll);
+router.get('/maladiecalendrier/:id', CtrlMaladieCalendrier.getById);
+router.get('/maladie/:id', CtrlMaladie.getById);
+router.get('/maladiecalendrier/user/:id', CtrlMaladieCalendrier.getForUser);
 
 
 // server startup

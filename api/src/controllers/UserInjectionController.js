@@ -3,7 +3,8 @@ var Database = require('../config/db.js');
 module.exports.getAll = function (req, res) {
     let connexion = new Database();
     let client = connexion.getClient();
-    client.query('SELECT * FROM injectionUtilisateur', (err, resultats) => {
+    client.query('SELECT * FROM injectionUtilisateur,injection, vaccin where injectionUtilisateur.idinjection=injection.idinjection and injection.idvaccin=vaccin.idvaccin'
+    , (err, resultats) => {
         res.status(200).json(resultats.rows);
         connexion.disconnect();
     });

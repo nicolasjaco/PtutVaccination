@@ -13,4 +13,14 @@ export class MaladiecalendrierService {
   getMaladieCalendrierById(id: number): Observable<object> {
     return this.http.get(this.BASE_URL + "maladiecalendrier/30");
   }
+
+  getMaladieCalendrierAll(): Observable<object> {
+    return this.http.get(this.BASE_URL + "maladiecalendrier");
+
+}
+getMaladieCalendrierForUser(id: number): Observable<object> {
+  return this.http.get(this.BASE_URL + "maladiecalendrier/user/"+id);
+}
+
+
 }

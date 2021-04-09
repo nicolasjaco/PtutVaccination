@@ -3,15 +3,15 @@
     matTooltip="Bonjour {{ user.prenom }}, vous avez 1 rappel à venir" matToolTipTouchGestures="on"
     matTooltipPosition="left" matTooltipClass="tooltip" />
   <h2>Rappels à venir</h2>
-  <mat-accordion>
+  <mat-accordion *ngFor="let maladie of maladiecldr ">
     <mat-expansion-panel class="accordion" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
         <mat-panel-title class="panel_title">
           <div>
-            {{this.maladie}}<br />
+            {{maladie.nommaladie}}<br />
             A faire
           </div>
-          <mat-icon *ngIf="maladieInfo" class="btn-info" matTooltip="{{ maladieInfo[0].informationsmaladie}}"
+          <mat-icon class="btn-info" matTooltip="{{ maladie.informationsmaladie}}"
             matToolTipTouchGestures="on" matTooltipClass="tooltip" color="accent">info</mat-icon>
           <mat-icon (click)="openDialog()" class="btn-alerte">add_alert</mat-icon>
         </mat-panel-title>

@@ -18,15 +18,15 @@ export class CalendrierComponent implements OnInit {
   panelOpenState: boolean = false;
   user: User = <User>{};
   maladiecldr: Array<MaladieCalendrier> = [];
-  maladie: string = "";
-  maladieInfo: Array<Maladie> = [];
+
+  
 
   constructor(
     private matDialog: MatDialog,
     private usersService: UsersService,
     private maladieCalendrier: MaladiecalendrierService,
     private maladieService: MaladieService
-  ) {}
+  ) { }
 
   openDialog() {
     const dialogConfig = new MatDialogConfig();
@@ -47,27 +47,20 @@ export class CalendrierComponent implements OnInit {
         ...data[0],
         datedenaissance: new Date(data[0].datedenaissance),
       };
-      console.log(data[0].datedenaissance);      
-      this.calcAgeMonth();
-      this.checkAgeVaccin();
+      console.log(data[0].datedenaissance);
+      //this.calcAgeMonth();      
+      
     });
-    this.maladieCalendrier.getMaladieCalendrierById(30).subscribe((data: any) => {
-       this.maladiecldr = data;       
-      });
-    this.maladieService.getMaladieById(58).subscribe((data: any) => {
-      this.maladieInfo = data;
+    //TODO:remplacer par idutilisateur
+    this.maladieCalendrier.getMaladieCalendrierForUser(1).subscribe((data: any) => {
+      this.maladiecldr = data;
+      console.log(this.maladiecldr);
     });
+   
   }
-  calcAgeMonth() {
-    let timeDiff = Math.abs(Date.now() - this.user.datedenaissance.getTime());
-    let age = Math.floor(timeDiff / (1000 * 3600 * 24) / 30.4375);
-    return age;
-  }
-
-  checkAgeVaccin() {
-    if (this.calcAgeMonth() >= this.maladiecldr[0].calendrier) {
-      this.maladie = this.maladiecldr[0].nommaladie;
-    }
-    return this.maladie;
-  }
+  //calcAgeMonth() {
+  //  let timeDiff = Math.abs(Date.now() - this.user.datedenaissance.getTime());
+   // let age = Math.floor(timeDiff / (1000 * 3600 * 24) / 30.4375);
+    //return age;
+ // }  
 }
