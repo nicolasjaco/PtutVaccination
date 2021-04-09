@@ -4,10 +4,10 @@ import { DialogRappelComponent } from "src/app/dialog-rappel/dialog-rappel.compo
 import { AjoutVaccinComponent } from "src/app/components/ajout-vaccin/ajout-vaccin.component";
 import { User } from "src/app/model/user";
 import { UsersService } from "src/app/services/users.service";
-import {MaladieCalendrier} from "src/app/model/maladiecalendrier";
-import {MaladiecalendrierService} from "src/app/services/maladiecalendrier.service";
-import {Maladie} from "src/app/model/maladie";
-import {MaladieService} from "src/app/services/maladie.service";
+import { MaladieCalendrier } from "src/app/model/maladiecalendrier";
+import { MaladiecalendrierService } from "src/app/services/maladiecalendrier.service";
+import { Maladie } from "src/app/model/maladie";
+import { MaladieService } from "src/app/services/maladie.service";
 
 @Component({
   selector: "app-calendrier",
@@ -17,15 +17,15 @@ import {MaladieService} from "src/app/services/maladie.service";
 export class CalendrierComponent implements OnInit {
   panelOpenState: boolean = false;
   user: User = <User>{};
-  maladiecldr:Array<MaladieCalendrier> = [];
-  maladie:string="";
-  maladieInfo:Array<Maladie> = [];
+  maladiecldr: Array<MaladieCalendrier> = [];
+  maladie: string = "";
+  maladieInfo: Array<Maladie> = [];
 
   constructor(
     private matDialog: MatDialog,
     private usersService: UsersService,
-    private maladieCalendrier:MaladiecalendrierService,
-    private maladieService:MaladieService
+    private maladieCalendrier: MaladiecalendrierService,
+    private maladieService: MaladieService
   ) {}
 
   openDialog() {
@@ -47,28 +47,28 @@ export class CalendrierComponent implements OnInit {
         ...data[0],
         datedenaissance: new Date(data[0].datedenaissance),
       };
-      console.log(this.calcAgeMonth())
-      console.log(this.checkAgeVaccin());
+      this.calcAgeMonth();
     });
-    this.maladieCalendrier.getMaladieCalendrierById(30).subscribe((data: any) => {
-      this.maladiecldr = data;        
-    });
+    this.maladieCalendrier
+      .getMaladieCalendrierById(30)
+      .subscribe((data: any) => {
+        this.maladiecldr = data;
+        this.checkAgeVaccin();
+      });
     this.maladieService.getMaladieById(58).subscribe((data: any) => {
-      this.maladieInfo = data;     
-      console.log(this.maladieInfo[0].informationsmaladie)   
+      this.maladieInfo = data;
     });
-    
   }
   calcAgeMonth() {
-    let timeDiff = Math.abs(Date.now() - this.user.datedenaissance.getTime());   
-    let age = Math.floor(timeDiff / (1000 * 3600 * 24) / 30.4375);        
+    let timeDiff = Math.abs(Date.now() - this.user.datedenaissance.getTime());
+    let age = Math.floor(timeDiff / (1000 * 3600 * 24) / 30.4375);
     return age;
   }
 
-checkAgeVaccin(){  
-  if (this.calcAgeMonth()>=this.maladiecldr[0].calendrier){     
-    this.maladie=this.maladiecldr[0].nommaladie;       
+  checkAgeVaccin() {
+    if (this.calcAgeMonth() >= this.maladiecldr[0].calendrier) {
+      this.maladie = this.maladiecldr[0].nommaladie;
+    }
+    return this.maladie;
   }
-  return this.maladie;
-}
 }
