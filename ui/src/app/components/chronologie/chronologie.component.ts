@@ -15,6 +15,7 @@ export class ChronologieComponent implements OnInit {
   ngOnInit(): void {
     this.userinjectionService.getAllUserInjections().subscribe((data: any) => {
       this.userinjections = data;
+      console.log(data);
     });
   }
 }

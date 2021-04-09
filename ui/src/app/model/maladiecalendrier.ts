@@ -1,5 +1,6 @@
 export interface MaladieCalendrier {
     idmaladie: number;
     nommaladie: string;
-    calendrier: number;        
+    calendrier: number;  
+    informationsmaladie: string;      
   }

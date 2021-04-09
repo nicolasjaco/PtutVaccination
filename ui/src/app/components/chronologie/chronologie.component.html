@@ -4,7 +4,8 @@
     label="{{ injection.date | date: 'shortDate' }}"
     state="step1"
   >
-    {{ injection.numero_lot }}
+  Nom : {{ injection.nom }} <br/>
+  Numéro de lot : {{ injection.numero_lot }}  
   </mat-step>
 
   <ng-template matStepperIcon="step1">

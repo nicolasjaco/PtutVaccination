@@ -25,11 +25,13 @@ export class DialogueAjoutVaccComponent implements OnInit {
   ) {}
   @Output()
   notifyAjoutInjection: EventEmitter<any> = new EventEmitter();
+
   ngOnInit(): void {
     this.userinjectionService.getAllUserInjections().subscribe((data: any) => {
       this.userinjections = data;
     });
   }
+  
   close() {
     this.userinjectionService
       .createUserInjection(
