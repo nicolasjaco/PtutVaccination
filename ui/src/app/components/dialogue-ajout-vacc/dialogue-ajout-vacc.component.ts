@@ -31,15 +31,10 @@ export class DialogueAjoutVaccComponent implements OnInit {
       this.userinjections = data;
     });
   }
-  
+
   close() {
     this.userinjectionService
-      .createUserInjection(
-        this.userinjections.length,
-        1,
-        this.dateOfInjection,
-        this.num_lot
-      )
+      .createUserInjection(100, 1, this.dateOfInjection, this.num_lot)
       .subscribe((data: any) => {
         this.userinjection = data[0];
       });

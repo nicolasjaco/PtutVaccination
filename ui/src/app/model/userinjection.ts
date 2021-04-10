@@ -3,4 +3,5 @@ export interface UserInjection {
   idUtilisateur: string;
   date: Date;
   numero_lot: number;
+  nom: string;
 }

@@ -1,27 +1,71 @@
 <div class="container" (mouseenter)="tooltip.show()">
-  <img #tooltip="matTooltip" class="img-zephyr" src="assets/images/zephyr.png"
-    matTooltip="Bonjour {{ user.prenom }}, vous avez 1 rappel à venir" matToolTipTouchGestures="on"
-    matTooltipPosition="left" matTooltipClass="tooltip" />
+  <img
+    #tooltip="matTooltip"
+    class="img-zephyr"
+    src="assets/images/zephyr.png"
+    matTooltip="Bonjour {{ user.prenom }}, vous avez {{
+      maladiecldr.length
+    }} rappel(s) à venir"
+    matToolTipTouchGestures="on"
+    matTooltipPosition="left"
+    matTooltipClass="tooltip"
+  />
   <h2>Rappels à venir</h2>
-  <mat-accordion *ngFor="let maladie of maladiecldr ">
-    <mat-expansion-panel class="accordion" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+  <mat-accordion *ngFor="let maladie of maladiecldr">
+    <mat-expansion-panel
+      class="accordion"
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
       <mat-expansion-panel-header>
         <mat-panel-title class="panel_title">
           <div>
-            {{maladie.nommaladie}}<br />
-            A faire
+            {{ maladie.nommaladie }}<br />
+            <p class="retard" *ngIf="maladie.usermonth >= maladie.calendrier">
+              A Faire
+            </p>
+            <p class="a-jour" *ngIf="maladie.usermonth < maladie.calendrier">
+              A Jour
+            </p>
           </div>
-          <mat-icon class="btn-info" matTooltip="{{ maladie.informationsmaladie}}"
-            matToolTipTouchGestures="on" matTooltipClass="tooltip" color="accent">info</mat-icon>
-          <mat-icon (click)="openDialog()" class="btn-alerte">add_alert</mat-icon>
+          <mat-icon
+            class="btn-info"
+            matTooltip="{{ maladie.informationsmaladie }}"
+            matToolTipTouchGestures="on"
+            matTooltipClass="tooltip"
+            color="accent"
+            >info</mat-icon
+          >
+          <mat-icon (click)="openDialog()" class="btn-alerte"
+            >add_alert</mat-icon
+          >
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <p>Lorem ipsum dolor sit amet.</p>
+      <p *ngIf="maladie.usermonth >= maladie.calendrier">
+        Vous êtes en retard de
+        <b>{{ maladie.usermonth - maladie.calendrier }}</b> mois
+      </p>
+      <p *ngIf="maladie.usermonth < maladie.calendrier">
+        Vous devrez effectuer ce rappel dans
+        {{ maladie.calendrier - maladie.usermonth }} mois
+      </p>
+      <p>Vaccins à effectuer:</p>
+      <ul>
+        <li *ngFor="let vaccin of vaccins">{{ vaccin.nom }}</li>
+      </ul>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
 
-<button (mouseenter)="tooltip.show()" #tooltip="matTooltip" (click)="openDialogajout()" id="btplus" mat-mini-fab
-  matTooltip="Ajouter un vaccin" matToolTipTouchGestures="on" matTooltipClass="tooltip">
+<button
+  (mouseenter)="tooltip.show()"
+  #tooltip="matTooltip"
+  (click)="openDialogajout()"
+  id="btplus"
+  mat-mini-fab
+  matTooltip="Ajouter un vaccin"
+  matToolTipTouchGestures="on"
+  matTooltipClass="tooltip"
+>
   +
 </button>

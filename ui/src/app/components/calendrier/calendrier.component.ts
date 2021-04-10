@@ -8,6 +8,8 @@ import { MaladieCalendrier } from "src/app/model/maladiecalendrier";
 import { MaladiecalendrierService } from "src/app/services/maladiecalendrier.service";
 import { Maladie } from "src/app/model/maladie";
 import { MaladieService } from "src/app/services/maladie.service";
+import { Vaccin } from "src/app/model/vaccin";
+import { VaccinsService } from "src/app/services/vaccins.service";
 
 @Component({
   selector: "app-calendrier",
@@ -18,15 +20,14 @@ export class CalendrierComponent implements OnInit {
   panelOpenState: boolean = false;
   user: User = <User>{};
   maladiecldr: Array<MaladieCalendrier> = [];
-
-  
+  vaccins: Array<Vaccin> = [];
 
   constructor(
     private matDialog: MatDialog,
     private usersService: UsersService,
     private maladieCalendrier: MaladiecalendrierService,
-    private maladieService: MaladieService
-  ) { }
+    private vaccinsService: VaccinsService
+  ) {}
 
   openDialog() {
     const dialogConfig = new MatDialogConfig();
@@ -48,19 +49,26 @@ export class CalendrierComponent implements OnInit {
         datedenaissance: new Date(data[0].datedenaissance),
       };
       console.log(data[0].datedenaissance);
-      //this.calcAgeMonth();      
-      
+      //this.calcAgeMonth();
     });
     //TODO:remplacer par idutilisateur
-    this.maladieCalendrier.getMaladieCalendrierForUser(1).subscribe((data: any) => {
-      this.maladiecldr = data;
-      console.log(this.maladiecldr);
-    });
-   
+    this.maladieCalendrier
+      .getMaladieCalendrierForUser(1)
+      .subscribe((data: any) => {
+        this.maladiecldr = data;
+        console.log(this.maladiecldr);
+        this.maladiecldr.forEach((maladie) => {
+          this.vaccinsService
+            .getVaccinsByMaladie(maladie.idmaladie)
+            .subscribe((data: any) => {
+              this.vaccins = data;
+            });
+        });
+      });
   }
   //calcAgeMonth() {
   //  let timeDiff = Math.abs(Date.now() - this.user.datedenaissance.getTime());
-   // let age = Math.floor(timeDiff / (1000 * 3600 * 24) / 30.4375);
-    //return age;
- // }  
+  // let age = Math.floor(timeDiff / (1000 * 3600 * 24) / 30.4375);
+  //return age;
+  // }
 }

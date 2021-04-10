@@ -34,11 +34,13 @@ router.post('/user', CtrlUser.create);
 router.delete('/user/:id', CtrlUser.deleteById);
 // Vaccins
 router.get('/vaccins/', CtrlVaccin.getAll);
+router.get('/vaccins/maladie/:id',CtrlVaccin.getVaccinByMaladie);
 // Rappels
 //Injections Utilisateur
 router.get('/userinjections/', CtrlUserInjection.getAll);
 router.post('/userinjection', CtrlUserInjection.create);
 router.delete('/userinjection/:id', CtrlUserInjection.deleteById);
+//Maladies
 router.get('/maladiecalendrier',CtrlMaladieCalendrier.getAll);
 router.get('/maladiecalendrier/:id', CtrlMaladieCalendrier.getById);
 router.get('/maladie/:id', CtrlMaladie.getById);

@@ -13,4 +13,8 @@ export class VaccinsService {
   getAllVaccins(): Observable<object> {
     return this.http.get(this.BASE_URL + "vaccins");
   }
+
+  getVaccinsByMaladie(id: number): Observable<object> {
+    return this.http.get(this.BASE_URL + "vaccins/maladie/" + id);
+  }
 }
